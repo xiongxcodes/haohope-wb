@@ -1,0 +1,175 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.github.xiongxcodes</groupId>
+	<artifactId>haohope-wb-parent</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<name>Haohope Build</name>
+	<url>https://github.com/xiongxcodes/haohope-wb</url>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<jdk.version>1.8</jdk.version>
+		<java.version>1.8</java.version>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+	</properties>
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>com.github.xiongxcodes</groupId>
+				<artifactId>haohope-dependencies</artifactId>
+				<version>1.0.0-SNAPSHOT</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+	<description>
+        Modules to centralize common resources and configuration for "haohope components" Maven builds.
+    </description>
+	<developers>
+		<developer>
+			<id>xiongx</id>
+			<name>xiongx</name>
+			<email>348953327@qq.com</email>
+			<url>https://gitee.com/xiongxcodes</url>
+			<organization>xiongxcodes</organization>
+			<organizationUrl>https://github.com/xiongxcodes</organizationUrl>
+		</developer>
+	</developers>
+	<scm>
+		<connection>scm:git:https://github.com/xiongxcodes/haohope-wb.git</connection>
+		<developerConnection>scm:git:https://github.com/xiongxcodes/haohope-wb.git</developerConnection>
+		<url>https://github.com/xiongxcodes/haohope-wb</url>
+		<tag>HEAD</tag>
+	</scm>
+	<licenses>
+		<license>
+			<name>Apache License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0</url>
+		</license>
+	</licenses>
+	<profiles>
+		<!--配置快照版本发布到私有仓库 -->
+		<profile>
+			<id>publish-snapshot-private-central</id>
+			<distributionManagement>
+				<snapshotRepository>
+					<id>snapshots</id>
+					<url>http://develop:8081/repository/maven-snapshots/</url>
+				</snapshotRepository>
+			</distributionManagement>
+		</profile>
+		<!--配置快照版本发布到Maven仓库 <profile> <id>publish-snapshot-maven-central</id> 
+			<distributionManagement> <snapshotRepository> <id>sonatype-snapshots</id> 
+			<url>https://oss.sonatype.org/content/repositories/snapshots</url> </snapshotRepository> 
+			</distributionManagement> </profile> -->
+	</profiles>
+	<!--正式版本发布到Maven Central -->
+	<distributionManagement>
+		<repository>
+			<id>snapshots</id>
+			<url>http://develop:8081/repository/maven-snapshots/</url>
+		</repository>
+	</distributionManagement>
+	<repositories>
+		<!--配置拉取Maven仓库正式版依赖 -->
+		<repository>
+			<id>aliyun-central</id>
+			<url>https://maven.aliyun.com/repository/central</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+		<!--配置拉取私有仓库快照依赖 -->
+		<repository>
+			<id>snapshots</id>
+			<url>http://develop:8081/repository/maven-snapshots/</url>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+			<releases>
+				<enabled>false</enabled>
+			</releases>
+		</repository>
+	</repositories>
+	<build>
+		<plugins>
+			<!--生成Source jar文件 -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<version>2.2.1</version>
+				<executions>
+					<execution>
+						<id>attach-sources</id>
+						<goals>
+							<goal>jar-no-fork</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<!--生成Javadoc，关闭doclint,避免注解检查不通过 -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>2.9.1</version>
+				<executions>
+					<execution>
+						<id>attach-javadocs</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+						<configuration>
+							<additionalparam>-Xdoclint:none</additionalparam>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<!--Maven GPG插件用于使用以下配置对组件进行签名 -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-gpg-plugin</artifactId>
+				<version>1.5</version>
+				<executions>
+					<execution>
+						<id>sign-artifacts</id>
+						<phase>verify</phase>
+						<goals>
+							<goal>sign</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<!--Nexus Staging Maven插件是将组件部署到OSSRH并将其发布到Central Repository的推荐方法 -->
+			<plugin>
+				<groupId>org.sonatype.plugins</groupId>
+				<artifactId>nexus-staging-maven-plugin</artifactId>
+				<version>1.6.7</version>
+				<extensions>true</extensions>
+				<configuration>
+					<serverId>sonatype-releases</serverId>
+					<nexusUrl>https://oss.sonatype.org/</nexusUrl>
+					<autoReleaseAfterClose>false</autoReleaseAfterClose>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+	<modules>
+		<module>wb-dependencies</module>
+		<module>wb-zip</module>
+		<module>wb-json</module>
+		<module>wb-rhino</module>
+		<module>wb-mozilla</module>
+		<module>wb-fit</module>
+		<module>wb-core</module>
+		<module>wb-ext</module>
+		<module>wb-spring-boot-starter</module>
+	</modules>
+</project>

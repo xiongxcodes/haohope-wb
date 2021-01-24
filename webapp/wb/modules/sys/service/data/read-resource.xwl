@@ -1,0 +1,1 @@
+{"hidden":true,"children":[{"configs":{"itemId":"module","serverScript":"Resource.getString(request, app.get('name'), app.get('defaultValue'));"},"expanded":false,"children":[],"type":"module"}],"roles":{},"title":"读当前用户的资源","iconCls":"","inframe":false,"pageLink":""}

@@ -1,0 +1,1 @@
+{"hidden":false,"children":[{"configs":{"serverScript":"Wb.apply(app, {\n  /**\n   * 引用该模块后该方法即可被使用。\n   */\n  add: function(v1, v2) {\n    return v1 + v2;\n  }\n});","itemId":"module"},"expanded":false,"children":[],"type":"module"}],"roles":{},"title":"公共方法","iconCls":"","inframe":false,"pageLink":""}

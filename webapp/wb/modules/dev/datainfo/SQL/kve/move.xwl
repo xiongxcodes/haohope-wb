@@ -1,0 +1,1 @@
+{"hidden":true,"children":[{"configs":{"serverScript":"app.run('update WB_KEY_TREE set PARENT_ID={?newParentId?} where KEY_ID={?KEY_ID?}', {\n  arrayName: 'recs'\n});","itemId":"module"},"expanded":true,"children":[],"type":"module"}],"roles":{},"title":"移动","iconCls":"","inframe":false,"pageLink":""}

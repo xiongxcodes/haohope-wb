@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Context>
+<Context reloadable="true" crossContext="true">
+	<WatchedResource>WEB-INF/web.xml</WatchedResource>
+	<Resource name="jdbc/{#jndi#}" auth="Container" type="javax.sql.DataSource"
+		driverClassName="com.mysql.jdbc.Driver"
+		url="jdbc:mysql://{#ip#}:{#port#}/{#dbname#}?autoReconnect=true&amp;allowMultiQueries=true&amp;useUnicode=true&amp;characterEncoding=utf-8&amp;mysqlEncoding=utf8"
+		validationQuery="select 1" testWhileIdle="true" testOnBorrow="false"
+		username="{#username#}" password="{#password#}" maxTotal="20" maxIdle="10" />
+</Context>

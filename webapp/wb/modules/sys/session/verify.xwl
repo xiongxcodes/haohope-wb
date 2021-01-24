@@ -1,0 +1,1 @@
+{"hidden":true,"children":[{"configs":{"itemId":"module","serverMethod":"com.wb.common.Session.verify","loginRequired":"false"},"expanded":false,"children":[],"type":"module"}],"roles":{},"title":"登录验证","iconCls":"","inframe":false,"pageLink":""}

@@ -1,0 +1,119 @@
+{
+  "db2": {
+    "VARCHAR": "VARCHAR",
+    "NVARCHAR": "NVARCHAR",
+    "NUMERIC": "NUMERIC",
+    "DATETIME": "TIMESTAMP",
+    "CLOB": "CLOB",
+    "NCLOB": "CLOB",
+    "BLOB": "BLOB"
+  },
+  "derby": {
+    "VARCHAR": "VARCHAR",
+    "NVARCHAR": "VARCHAR",
+    "NUMERIC": "NUMERIC",
+    "DATETIME": "TIMESTAMP",
+    "CLOB": "CLOB",
+    "NCLOB": "CLOB",
+    "BLOB": "BLOB"
+  },
+  "firebird": {
+    "VARCHAR": "VARCHAR",
+    "NVARCHAR": "VARCHAR",
+    "NUMERIC": "NUMERIC",
+    "DATETIME": "TIMESTAMP",
+    "CLOB": "BLOB SUB_TYPE TEXT",
+    "NCLOB": "BLOB SUB_TYPE TEXT",
+    "BLOB": "BLOB"
+  },
+  "h2": {
+    "VARCHAR": "VARCHAR",
+    "NVARCHAR": "NVARCHAR",
+    "NUMERIC": "NUMERIC",
+    "DATETIME": "TIMESTAMP",
+    "CLOB": "CLOB",
+    "NCLOB": "NCLOB",
+    "BLOB": "BLOB"
+  },
+  "hsqldb": {
+    "VARCHAR": "VARCHAR",
+    "NVARCHAR": "VARCHAR",
+    "NUMERIC": "NUMERIC",
+    "DATETIME": "TIMESTAMP",
+    "CLOB": "CLOB",
+    "NCLOB": "CLOB",
+    "BLOB": "BLOB"
+  },
+  "informix": {
+    "VARCHAR": "VARCHAR",
+    "NVARCHAR": "NVARCHAR",
+    "NUMERIC": "NUMERIC",
+    "DATETIME": "DATETIME",
+    "CLOB": "CLOB",
+    "NCLOB": "CLOB",
+    "BLOB": "BLOB"
+  },
+  "mysql": {
+    "VARCHAR": "VARCHAR",
+    "NVARCHAR": "VARCHAR",
+    "NUMERIC": "NUMERIC",
+    "DATETIME": "DATETIME",
+    "CLOB": "LONGTEXT",
+    "NCLOB": "LONGTEXT",
+    "BLOB": "LONGBLOB"
+  },
+  "oracle": {
+    "VARCHAR": "VARCHAR2",
+    "NVARCHAR": "NVARCHAR2",
+    "NUMERIC": "NUMERIC",
+    "DATETIME": "TIMESTAMP",
+    "CLOB": "CLOB",
+    "NCLOB": "NCLOB",
+    "BLOB": "BLOB"
+  },
+  "pointbase": {
+    "VARCHAR": "VARCHAR",
+    "NVARCHAR": "VARCHAR",
+    "NUMERIC": "NUMERIC",
+    "DATETIME": "TIMESTAMP",
+    "CLOB": "CLOB",
+    "NCLOB": "CLOB",
+    "BLOB": "BLOB"
+  },
+  "postgresql": {
+    "VARCHAR": "VARCHAR",
+    "NVARCHAR": "VARCHAR",
+    "NUMERIC": "NUMERIC",
+    "DATETIME": "TIMESTAMP",
+    "CLOB": "TEXT",
+    "NCLOB": "TEXT",
+    "BLOB": "BYTEA"
+  },
+  "sqlserver": {
+    "VARCHAR": "VARCHAR",
+    "NVARCHAR": "NVARCHAR",
+    "NUMERIC": "NUMERIC",
+    "DATETIME": "DATETIME",
+    "CLOB": "VARCHAR(MAX)",
+    "NCLOB": "NVARCHAR(MAX)",
+    "BLOB": "VARBINARY(MAX)"
+  },
+  "sybase": {
+    "VARCHAR": "VARCHAR",
+    "NVARCHAR": "NVARCHAR",
+    "NUMERIC": "NUMERIC",
+    "DATETIME": "DATETIME",
+    "CLOB": "TEXT",
+    "NCLOB": "TEXT",
+    "BLOB": "IMAGE"
+  },
+  "teradata": {
+    "VARCHAR": "VARCHAR",
+    "NVARCHAR": "VARCHAR",
+    "NUMERIC": "NUMERIC",
+    "DATETIME": "TIMESTAMP",
+    "CLOB": "CLOB",
+    "NCLOB": "CLOB",
+    "BLOB": "BLOB"
+  }
+}

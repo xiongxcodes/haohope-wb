@@ -1,0 +1,1 @@
+{"hidden":false,"children":[{"configs":{"itemId":"module"},"expanded":true,"children":[{"configs":{"itemId":"query1","arrayName":"recs","sql":"update WB_EMPLOYEE set DEPT_ID={?newDeptId?} where EMPLOYEE_ID={?EMPLOYEE_ID?}"},"expanded":false,"children":[],"type":"query"}],"type":"module"}],"roles":{},"title":"部门调整","iconCls":"","inframe":false,"pageLink":""}

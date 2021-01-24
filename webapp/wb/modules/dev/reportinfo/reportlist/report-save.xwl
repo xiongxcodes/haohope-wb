@@ -1,0 +1,1 @@
+{"hidden":false,"children":[{"configs":{"itemId":"module","button_selrecord":"true"},"expanded":true,"children":[{"configs":{"itemId":"updater1","tableName":"wb_ureports"},"expanded":false,"children":[],"type":"updater"}],"type":"module"}],"roles":{},"title":"保存","iconCls":"accept_icon","inframe":false,"pageLink":""}

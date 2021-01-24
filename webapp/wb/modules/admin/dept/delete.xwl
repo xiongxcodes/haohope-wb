@@ -1,0 +1,1 @@
+{"hidden":false,"children":[{"configs":{"serverScript":"app.run('delete from WB_DEPT where DEPT_ID={?DEPT_ID?}', {\n  arrayName: 'deptIds'\n});","itemId":"module"},"expanded":true,"children":[],"type":"module"}],"roles":{},"title":"删除","iconCls":"","inframe":false,"pageLink":""}

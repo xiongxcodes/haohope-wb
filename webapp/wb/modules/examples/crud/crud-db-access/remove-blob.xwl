@@ -1,0 +1,1 @@
+{"hidden":false,"children":[{"configs":{"itemId":"module"},"expanded":true,"children":[{"configs":{"itemId":"query1","sql":"update WB_MISC set BLOB_FIELD=null where ID_FIELD={?ID_FIELD?}"},"expanded":false,"children":[],"type":"query"}],"type":"module"}],"roles":{},"title":"删除二进制字段","iconCls":"","inframe":false,"pageLink":""}

@@ -1,0 +1,1 @@
+{"hidden":true,"children":[{"configs":{"itemId":"module","serverScript":"app.send(app.getPostListHtml(false).html);","importModules":"[\"m?xwl=dev/otherinfo/community/common-util\"]","loginRequired":"false"},"expanded":true,"children":[],"type":"module"}],"roles":{"default":1},"title":"查询回复","iconCls":"","inframe":false,"pageLink":""}

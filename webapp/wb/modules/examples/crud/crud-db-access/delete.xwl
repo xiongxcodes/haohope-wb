@@ -1,0 +1,1 @@
+{"hidden":false,"children":[{"configs":{"itemId":"module","description":"使用updater控件效果等同于以下代码：\napp.update({tableName:'WB_MISC'});"},"expanded":true,"children":[{"configs":{"itemId":"updater1","tableName":"WB_MISC"},"expanded":false,"children":[],"type":"updater"}],"type":"module"}],"roles":{},"title":"删除","iconCls":"","inframe":false,"pageLink":""}

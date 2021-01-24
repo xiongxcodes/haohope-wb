@@ -1,0 +1,1 @@
+{"hidden":true,"children":[{"configs":{"itemId":"module","serverMethod":"cn.hh.wb.admin.configuration.redis.RedisData.getValueinfo"},"expanded":false,"children":[],"type":"module"}],"roles":{},"title":"key信息","iconCls":"","inframe":false,"pageLink":""}

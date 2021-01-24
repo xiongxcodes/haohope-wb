@@ -21,9 +21,14 @@
 			<dependency>
 				<groupId>com.github.xiongxcodes</groupId>
 				<artifactId>haohope-dependencies</artifactId>
-				<version>1.0.0-SNAPSHOT</version>
+				<version>1.0.0-releases</version>
 				<type>pom</type>
 				<scope>import</scope>
+			</dependency>
+			<dependency>
+				<groupId>com.github.xiongxcodes</groupId>
+				<artifactId>haohope-tool</artifactId>
+				<version>1.0.0-releases</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>

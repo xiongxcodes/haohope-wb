@@ -1,0 +1,1 @@
+{"hidden":true,"children":[{"configs":{"serverScript":"app.allowBasePath = com.wb.interact.ResourceManager.basePath;\napp.execute('m?xwl=sys/tool/file/paste');","itemId":"module"},"expanded":false,"children":[],"type":"module"}],"roles":{},"title":"粘贴文件","iconCls":"","inframe":false,"pageLink":""}

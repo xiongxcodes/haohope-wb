@@ -1,0 +1,128 @@
+.run_disabled_icon {
+  background-image: url(../images/app/run_disabled.png) !important;
+}
+
+.save_disabled_icon {
+  background-image: url(../images/app/save_disabled.png) !important;
+}
+
+.save_all_disabled_icon {
+  background-image: url(../images/app/save_all_disabled.png) !important;
+}
+
+.ide_h1 {
+  background-image: url(../images/app/h1.png) !important;
+}
+
+.ide_h2 {
+  background-image: url(../images/app/h2.png) !important;
+}
+
+.ide_h3 {
+  background-image: url(../images/app/h3.png) !important;
+}
+
+.ide_h4 {
+  background-image: url(../images/app/h4.png) !important;
+}
+
+.ide_h5 {
+  background-image: url(../images/app/h5.png) !important;
+}
+
+.ide_v1 {
+  background-image: url(../images/app/v1.png) !important;
+}
+
+.ide_v2 {
+  background-image: url(../images/app/v2.png) !important;
+}
+
+.ide_v3 {
+  background-image: url(../images/app/v3.png) !important;
+}
+
+.ide_v4 {
+  background-image: url(../images/app/v4.png) !important;
+}
+
+.ide_v5 {
+  background-image: url(../images/app/v5.png) !important;
+}
+
+.ide_mask {
+  text-align: center;
+  cursor: move;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  background-image: url(../images/null.png);
+}
+
+.wb_design .x-resizable-handle {
+  width: 5px;
+  height: 5px;
+  background-color: black;
+  background-image: url(../images/app/box.png) !important;
+  margin: 0;
+}
+
+.wb_design .x-resizable-handle-west,
+.wb_design .x-resizable-handle-east {
+  top: 50%;
+  margin-top: -2px;
+}
+
+.wb_design .x-resizable-handle-north,
+.wb_design .x-resizable-handle-south {
+  left: 50%;
+  margin-left: -2px;
+}
+
+.wb_design .x-resizable-handle-east,
+.wb_design .x-resizable-handle-northeast,
+.wb_design .x-resizable-handle-southeast {
+  right: 0;
+}
+
+.wb_design .x-resizable-handle-west,
+.wb_design .x-resizable-handle-northwest,
+.wb_design .x-resizable-handle-southwest {
+  left: 0;
+}
+
+.wb_design .x-resizable-handle-north,
+.wb_design .x-resizable-handle-northeast,
+.wb_design .x-resizable-handle-northwest {
+  top: 0;
+}
+
+.wb_design .x-resizable-handle-south,
+.wb_design .x-resizable-handle-southeast,
+.wb_design .x-resizable-handle-southwest {
+  bottom: 0;
+}
+
+.ide_item_grid {
+  margin: 10px;
+  line-height: 1.5;
+}
+
+.ide_item_header {
+  background: #267597;
+  color: white;
+}
+
+.ide_item_content {
+  background: #f8f8f8;
+  color: #555;
+}
+
+.ide_glyph {
+  color: #333333;
+}
+
+.ide_glyphcombo {
+  padding-left: 24px;
+  padding-top: 3.5px;
+}

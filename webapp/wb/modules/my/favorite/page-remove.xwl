@@ -1,0 +1,1 @@
+{"hidden":false,"children":[{"configs":{"itemId":"module","serverScript":"var items = Resource.getString(request, \"collectPages\", null);\nitems = Wb.decode(items);\nitems.splice(app.get('index'), 1);\nResource.set(request, \"collectPages\", Wb.encode(items));"},"expanded":false,"children":[],"type":"module"}],"roles":{},"title":"页面删除","iconCls":"","inframe":false,"pageLink":""}

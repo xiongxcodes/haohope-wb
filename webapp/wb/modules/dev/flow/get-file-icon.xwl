@@ -1,0 +1,1 @@
+{"hidden":true,"children":[{"configs":{"itemId":"module","serverScript":"app.allowBasePath = com.wb.interact.ResourceManager.basePath;\napp.execute('m?xwl=sys/tool/file/get-file-icon');"},"expanded":false,"children":[],"type":"module"}],"roles":{},"title":"获取文件图标","iconCls":"","inframe":false,"pageLink":""}

@@ -1,0 +1,1 @@
+{"hidden":false,"children":[{"configs":{"itemId":"module"},"expanded":true,"children":[{"configs":{"itemId":"viewport1","html":"<iframe src ='/druid/index.html' width=\"100%\" height=\"100%\">"},"expanded":false,"children":[],"type":"viewport"}],"type":"module"}],"roles":{},"title":"SQL监控","iconCls":"computer_icon","inframe":true,"pageLink":""}

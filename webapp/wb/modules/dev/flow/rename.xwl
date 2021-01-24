@@ -1,0 +1,1 @@
+{"hidden":true,"children":[{"configs":{"serverScript":"app.allowBasePath = com.wb.interact.ResourceManager.basePath;\napp.execute('m?xwl=sys/tool/file/rename');","itemId":"module"},"expanded":false,"children":[],"type":"module"}],"roles":{},"title":"重命名","iconCls":"","inframe":false,"pageLink":""}

@@ -1,0 +1,1 @@
+{"hidden":true,"children":[{"configs":{"itemId":"module","serverScript":"com.wb.common.Session.createSession(request, 'test', null, false);\nWebUtil.forward(request, response, 'home');","loginRequired":"false"},"expanded":false,"children":[],"type":"module"}],"roles":{},"title":"演示主页","iconCls":"","inframe":false,"pageLink":"{path:'demo-home', method: 'get', newWin: true}"}

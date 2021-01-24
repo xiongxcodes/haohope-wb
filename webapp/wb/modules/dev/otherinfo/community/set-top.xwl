@@ -1,0 +1,1 @@
+{"hidden":true,"children":[{"configs":{"itemId":"module"},"expanded":true,"children":[{"configs":{"itemId":"query1","sql":"update WB_BBS_TITLE set SET_TOP={?weight?} where TITLE_ID={?TITLE_ID?}"},"expanded":false,"children":[],"type":"query"}],"type":"module"}],"roles":{},"title":"置顶","iconCls":"","inframe":false,"pageLink":""}

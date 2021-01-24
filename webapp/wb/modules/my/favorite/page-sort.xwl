@@ -1,0 +1,1 @@
+{"hidden":false,"children":[{"configs":{"itemId":"module","serverScript":"Resource.set(request, \"collectPages\", Wb.encode(app.getObject('grid')));"},"expanded":false,"children":[],"type":"module"}],"roles":{},"title":"页面排序","iconCls":"","inframe":false,"pageLink":""}

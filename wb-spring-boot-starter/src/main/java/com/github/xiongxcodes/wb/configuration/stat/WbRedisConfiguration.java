@@ -2,13 +2,15 @@ package com.github.xiongxcodes.wb.configuration.stat;
 
 import org.redisson.api.RedissonClient;
 import org.springframework.boot.autoconfigure.AutoConfigureAfter;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration;
+import org.springframework.boot.autoconfigure.data.redis.RedisProperties;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
 
+import com.github.xiongxcodes.wb.configuration.constant.WbConstant;
 import com.github.xiongxcodes.wb.configuration.properties.WbStatProperties;
 import com.github.xiongxcodes.wb.configuration.redis.FastJsonRedisTemplate;
 import com.github.xiongxcodes.wb.configuration.redis.RedisData;
@@ -29,10 +31,11 @@ import com.wb.common.UserList;
 import com.wb.common.Var;
 import com.wb.interact.Module;
 
-@EnableConfigurationProperties(WbStatProperties.class)
-@ConditionalOnBean(RedisConnectionFactory.class)
-@ConditionalOnProperty(prefix = "gg", name = "away", havingValue = "redis")
+@EnableConfigurationProperties({RedisProperties.class, WbStatProperties.class})
+@ConditionalOnClass(RedisConnectionFactory.class)
+@ConditionalOnProperty(prefix = WbConstant.WB_PREFIX, name = "away", havingValue = "redis")
 @AutoConfigureAfter(RedisAutoConfiguration.class)
+// @EnableRedisHttpSession(maxInactiveIntervalInSeconds = 1800)
 public class WbRedisConfiguration {
     @Bean
     public FastJsonRedisTemplate fastJsonRedisTemplate(RedisConnectionFactory connectionFactory) {

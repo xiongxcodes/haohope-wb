@@ -1,0 +1,1 @@
+{"hidden":true,"children":[{"configs":{"itemId":"module","serverScript":"com.wb.interact.DBE.checkSelectSql(request, response);\napp.output(app.get('sql') + DbUtil.getOrderBySql(request, null), {\n  createColumns: true,\n  jndi: app.get('jndi')\n});"},"expanded":true,"children":[],"type":"module"}],"roles":{},"title":"执行SQL","iconCls":"","inframe":false,"pageLink":""}

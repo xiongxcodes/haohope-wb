@@ -1,0 +1,1 @@
+{"hidden":true,"children":[{"configs":{"itemId":"module","serverScript":"if (app.get('CONTENT').length > 1048576)\n  throw '内容长度不能超过1M。';","internalCall":"true"},"expanded":true,"children":[],"type":"module"}],"roles":{"demo":1},"title":"限制内容长度","iconCls":"","inframe":false,"pageLink":""}

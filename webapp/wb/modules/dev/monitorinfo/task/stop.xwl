@@ -1,0 +1,1 @@
+{"hidden":true,"children":[{"configs":{"serverScript":"com.wb.tool.TaskManager.stop();\nVar.set('sys.task.enabled', false);","itemId":"module"},"expanded":false,"children":[],"type":"module"}],"roles":{},"title":"停止引擎","iconCls":"","inframe":false,"pageLink":""}

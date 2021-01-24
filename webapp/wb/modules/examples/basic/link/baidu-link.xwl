@@ -1,0 +1,1 @@
+{"hidden":false,"children":[{"configs":{"itemId":"module","description":"请查看模块属性的链接配置项（IDE中选择该模块文件并点击工具条[属性]按钮）"},"expanded":false,"children":[],"type":"module"}],"roles":{},"title":"百度链接","iconCls":"","inframe":true,"pageLink":"{url:'https://www.baidu.com', method: 'get'}"}

@@ -1,0 +1,1 @@
+{"hidden":false,"children":[{"configs":{"itemId":"module"},"expanded":true,"children":[{"configs":{"itemId":"query1","sql":"select 1 from WB_DUAL"},"expanded":false,"children":[],"type":"query"}],"type":"module"}],"roles":{},"title":"数据库请求","iconCls":"","inframe":false,"pageLink":""}

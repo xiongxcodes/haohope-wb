@@ -1,0 +1,1 @@
+{"hidden":true,"children":[{"configs":{"serverScript":"app.output('select * from WB_KEY where KEY_ID={?KEY_ID?}', {\n  limitRecords: -1,\n  fields: Wb.encode([{\n    name: 'K',\n    type: app.get('TYPE') == '1' ? 'string' : 'int'\n  }])\n});","itemId":"module"},"expanded":true,"children":[],"type":"module"}],"roles":{},"title":"查询","iconCls":"","inframe":false,"pageLink":""}

@@ -1,0 +1,113 @@
+.dm_simple {
+  background-color: #fff;
+  box-shadow: none;
+}
+
+.dm_simple .x-window-header-default {
+  background: #fff;
+  box-shadow: none;
+}
+
+.dm_simple .x-window-body-default {
+  background: #fff;
+  box-shadow: none;
+}
+
+.dm_simple .x-toolbar-footer {
+  background: #fff;
+  box-shadow: none;
+}
+
+.dm_simple .x-tab-bar-default {
+  background: #fff;
+}
+
+.dm_simple .x-tab-default {
+  background: white;
+}
+
+.dm_simple .x-tab-default .x-tab-inner {
+  color: #666;
+}
+
+.dm_simple .x-tab-default-active {
+  background: #337ab7;
+}
+
+.dm_simple .x-tab-default-active .x-tab-inner {
+  color: white;
+}
+
+.dm_grid1 .x-grid-cell {
+  height: 35px;
+  font: normal 15px/16px tahoma;
+}
+
+.dm_grid1 .x-grid-header-ct {
+  background: #307dcb;
+}
+
+.dm_grid1 .x-column-header {
+  background: #307dcb;
+  color: white;
+  font: normal 15px/16px tahoma;
+}
+
+.dm_grid1 .x-column-header-over {
+  background: #509deb;
+}
+
+.dm_grid2 .x-grid-cell {
+  height: 35px;
+  font: normal 15px/16px tahoma;
+}
+
+.dm_grid2 .x-grid-header-ct {
+  background: white;
+}
+
+.dm_grid2 .x-column-header {
+  background: white;
+  color: black;
+  font: normal 15px/16px tahoma;
+}
+
+.dm_grid2 .x-column-header-over {
+  background: white;
+}
+
+.dm_grid2 .x-toolbar-default {
+  background: white;
+}
+
+.dm_combo1 .x-form-text {
+  height: 30px;
+  line-height: 30px;
+  border-radius: 15px;
+  font-size: 16px;
+  padding: 5px 30px 5px 10px;
+  background-color: #5978e1;
+  color: white;
+}
+
+.dm_combo1 .x-boundlist-item {
+  font-size: 16px;
+  line-height: 30px;
+}
+
+.dm_combo1 .x-boundlist-item-over {
+  background: #5877eb;
+  border-color: #5877eb;
+  color: white;
+}
+
+.dm_combo1 .x-form-trigger-input-cell:after {
+  color: white;
+  cursor: pointer;
+  font: normal normal normal 14px/1 FontAwesome;
+  content: "\f002";
+  font-size: 13px;
+  position: absolute;
+  right: 10px;
+  top: 8px;
+}

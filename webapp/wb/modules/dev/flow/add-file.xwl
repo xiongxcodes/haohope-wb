@@ -1,0 +1,1 @@
+{"hidden":true,"children":[{"configs":{"serverScript":"app.allowBasePath = com.wb.interact.ResourceManager.basePath; //基于此目录在引用的模块内检查权限\napp.execute('m?xwl=sys/tool/file/add-file');","itemId":"module"},"expanded":false,"children":[],"type":"module"}],"roles":{},"title":"新建文件","iconCls":"","inframe":false,"pageLink":""}

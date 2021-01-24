@@ -1,0 +1,1 @@
+{"hidden":false,"children":[{"configs":{"itemId":"module"},"expanded":true,"children":[{"configs":{"itemId":"dataprovider1","sql":"select BIRTH_DATE,VACATION_HOURS from WB_EMPLOYEE where EMPLOYEE_CODE<'10010' order by BIRTH_DATE"},"expanded":false,"children":[],"type":"dataprovider"}],"type":"module"}],"roles":{},"title":"查询生日休假时长","iconCls":"","inframe":false,"pageLink":""}

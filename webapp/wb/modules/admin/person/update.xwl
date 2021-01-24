@@ -1,0 +1,1 @@
+{"hidden":false,"children":[{"configs":{"itemId":"module","serverScript":"app.update({\n  tableName: 'WB_PERSON',\n  mode: 'update'\n});\napp.output('select PIC from WB_PERSON where PERSON_ID={?PERSON_ID?}', {\n  type: 'object'\n}); //只查询图片是否存在标识并返回给前端是否更新"},"expanded":true,"children":[],"type":"module"}],"roles":{},"title":"修改","iconCls":"","inframe":false,"pageLink":""}

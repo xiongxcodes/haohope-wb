@@ -1,0 +1,182 @@
+{
+  "SQL Server": {
+    "prefix": "select name from sys.schemas where schema_id<10000 order by name",
+    "table": "select a.name from sys.all_objects a, sys.schemas b where a.schema_id=b.schema_id and type='U' and b.name='{#prefix#}' order by a.name",
+    "tableEdit": "select '{#fullTableName#}' as \"tableName\",'!createTableScript' as \"SCRIPT\",'\"'+COLUMN_NAME+'\"' as \"NAME\", DATA_TYPE + COALESCE('(' + CASE WHEN CHARACTER_MAXIMUM_LENGTH = -1 THEN 'MAX' ELSE CAST(CHARACTER_MAXIMUM_LENGTH AS VARCHAR(5)) END + ')','(' + CASE WHEN NUMERIC_PRECISION is not null THEN CAST(NUMERIC_PRECISION AS VARCHAR(5))+','+CAST(NUMERIC_SCALE AS VARCHAR(5)) else null END + ')', '') AS \"TYPE\",case when IS_NULLABLE='NO' then 0 else 1 end as \"IS_NULL\",COLUMN_DEFAULT from information_schema.COLUMNS where TABLE_SCHEMA='{#prefix#}' and TABLE_NAME='{#table#}' order by ORDINAL_POSITION",
+    "view": "select a.name from sys.all_objects a, sys.schemas b where a.schema_id=b.schema_id and type='V' and b.name='{#prefix#}' order by a.name",
+    "viewEdit": "select b.definition as \"SCRIPT\" from sys.all_objects a join sys.all_sql_modules b on a.object_id = b.object_id where a.type='V' and a.object_id = object_id('{#prefix#}.{#view#}')",
+    "sp": "select a.name from sys.all_objects a, sys.schemas b where a.schema_id=b.schema_id and type='P' and b.name='{#prefix#}' order by a.name",
+    "spEdit": "select b.definition as \"SCRIPT\" from sys.all_objects a join sys.all_sql_modules b on a.object_id = b.object_id where a.type='P' and a.object_id = object_id('{#prefix#}.{#sp#}')",
+    "fn": "select a.name from sys.all_objects a, sys.schemas b where a.schema_id=b.schema_id and type='FN' and b.name='{#prefix#}' order by a.name",
+    "fnEdit": "select b.definition as \"SCRIPT\" from sys.all_objects a join sys.all_sql_modules b on a.object_id = b.object_id where a.type='FN' and a.object_id = object_id('{#prefix#}.{#fn#}')",
+    "tr": "select a.name from sys.all_objects a, sys.schemas b where a.schema_id=b.schema_id and type='TR' and b.name='{#prefix#}' order by a.name",
+    "trEdit": "select b.definition as \"SCRIPT\" from sys.all_objects a join sys.all_sql_modules b on a.object_id = b.object_id where a.type='TR' and a.object_id = object_id('{#prefix#}.{#tr#}')",
+    "idx": "select name,case when is_primary_key=1 then 'key_icon' when is_unique=1 then 'star_icon' else 'sort_by_name_icon' end as \"iconCls\", 'true' as \"leaf\" from sys.indexes where object_id=object_id('{#fullTableName#}') and name is not null",
+    "idxEdit": "select '{#fullTableName#}' as \"tableName\",'!createIndexScript' as \"SCRIPT\",'\"'+c.name+'\"' as \"FIELD_NAME\",a.name as \"INDEX_NAME\" from sys.indexes a, sys.index_columns b, sys.columns c where a.object_id=b.object_id and a.index_id=b.index_id and b.object_id = c.object_id and b.column_id=c.column_id and a.object_id=object_id('{#fullTableName#}') and a.name='{#idx#}' order by a.index_id, b.index_column_id",
+    "tag": {
+      "db": "sqlserver",
+      "prefix": "select 'dbo'",
+      "types": ["varchar()", "nvarchar()", "numeric()", "datetime", "varchar(MAX)", "nvarchar(MAX)", "varbinary(MAX)"],
+      "fieldsMap": {
+        "1": "char(%s)",
+        "-15": "nchar(%s)",
+        "12": "varchar(%s)",
+        "-9": "nvarchar(%s)",
+        "4": "int",
+        "5": "smallint",
+        "-5": "bigint",
+        "6": "float",
+        "8": "double",
+        "3": "decimal(%s,%s)",
+        "2": "numeric(%s,%s)",
+        "91": "date",
+        "92": "time",
+        "93": "datetime",
+        "16": "boolean",
+        "-7": "bit",
+        "-1": "nvarchar(%s)",
+        "-16": "nvarchar(%s)",
+        "2004": "varbinary(%s)",
+        "2005": "varchar(%s)",
+        "2011": "nvarchar(%s)",
+        "-3": "varbinary(%s)"
+      },
+      "dropPk": "alter table %s drop constraint %s",
+      "viewAdd": "CREATE VIEW [name]\nas\n  select * from WB_USER",
+      "spAdd": "CREATE PROCEDURE [name]\n  @inParam varchar(10), --输入参数\n  @outParam varchar(10) OUT --输出参数\nas\nbegin\n  select * from WB_USER where 1=0\nend",
+      "fnAdd": "CREATE FUNCTION [name]\n(@param1 varchar(10), @param2 varchar(10))\nreturns varchar(20)\nas\nbegin\n  declare @var1 varchar(20)\n  set @var1=@param1+@param2\n  return @var1\nend",
+      "trAdd": "CREATE TRIGGER [name]\non tableName\nafter insert\nas\nbegin\n\nend"
+    }
+  },
+  "MySQL": {
+    "prefix": "select SCHEMA_NAME from information_schema.SCHEMATA order by SCHEMA_NAME",
+    "table": "select TABLE_NAME,TABLE_COMMENT as \"COMMENTS\" from information_schema.TABLES where TABLE_SCHEMA='{#prefix#}' and TABLE_TYPE like '%TABLE%' order by TABLE_NAME",
+    "tableEdit": {
+      "sql": "show create table {#fullTableName#}",
+      "map": {
+        "Create Table": "SCRIPT"
+      }
+    },
+    "field": "select COLUMN_NAME,COLUMN_COMMENT as \"COMMENTS\" from information_schema.COLUMNS where TABLE_SCHEMA='{#prefix#}' and TABLE_NAME='{#table#}'",
+    "fieldHint": "select COLUMN_NAME,COLUMN_COMMENT as \"COMMENTS\" from information_schema.COLUMNS where TABLE_SCHEMA='{#prefix#}' and TABLE_NAME='{#table#}'",
+    "view": "select TABLE_NAME,TABLE_COMMENT as \"COMMENTS\" from information_schema.TABLES where TABLE_SCHEMA='{#prefix#}' and TABLE_TYPE like '%VIEW%' order by TABLE_NAME",
+    "viewEdit": {
+      "sql": "show create view {#prefix#}.{#view#}",
+      "map": {
+        "Create View": "SCRIPT"
+      }
+    },
+    "sp": "select name from mysql.proc where db='{#prefix#}' and type='PROCEDURE' order by name",
+    "spEdit": {
+      "sql": "show create procedure {#prefix#}.{#sp#}",
+      "map": {
+        "Create Procedure": "SCRIPT"
+      }
+    },
+    "fn": "select name from mysql.proc where db='{#prefix#}' and type='FUNCTION' order by name",
+    "fnEdit": {
+      "sql": "show create function {#prefix#}.{#fn#}",
+      "map": {
+        "Create Function": "SCRIPT"
+      }
+    },
+    "tr": "select TRIGGER_NAME from information_schema.TRIGGERS where TRIGGER_SCHEMA='{#prefix#}' order by TRIGGER_NAME",
+    "trEdit": {
+      "sql": "show create trigger {#prefix#}.{#tr#}",
+      "map": {
+        "SQL Original Statement": "SCRIPT"
+      }
+    },
+    "idx": "select distinct INDEX_NAME,case when INDEX_NAME='PRIMARY' then 'key_icon' when NON_UNIQUE=0 then 'star_icon' else 'sort_by_name_icon' end as \"iconCls\",'true' as \"leaf\" from INFORMATION_SCHEMA.STATISTICS where TABLE_SCHEMA='{#prefix#}' and TABLE_NAME='{#table#}'",
+    "idxEdit": "select '{#fullTableName#}' as \"tableName\",'!createIndexScript' as \"SCRIPT\",concat('`',COLUMN_NAME,'`') as \"FIELD_NAME\",case when INDEX_NAME='PRIMARY' then 'PK' else INDEX_NAME end as \"INDEX_NAME\" from INFORMATION_SCHEMA.STATISTICS where TABLE_SCHEMA='{#prefix#}' and TABLE_NAME='{#table#}' and INDEX_NAME='{#idx#}' order by SEQ_IN_INDEX",
+    "tag": {
+      "db": "mysql",
+      "prefix": "select database()",
+      "types": ["varchar()", "nvarchar()", "numeric()", "datetime", "longtext", "longblob"],
+      "fieldsMap": {
+        "1": "char(%s)",
+        "-15": "nchar(%s)",
+        "12": "varchar(%s)",
+        "-9": "nvarchar(%s)",
+        "4": "int",
+        "5": "smallint",
+        "-5": "bigint",
+        "6": "float",
+        "8": "double",
+        "3": "decimal(%s,%s)",
+        "2": "numeric(%s,%s)",
+        "91": "date",
+        "92": "time",
+        "93": "datetime",
+        "16": "boolean",
+        "-7": "bit",
+        "-1": "longtext",
+        "-16": "longtext",
+        "2005": "longtext",
+        "2011": "longtext",
+        "2004": "longblob",
+        "-2": "longblob",
+        "-3": "longblob",
+        "-4": "longblob"
+      },
+      "dropPk": "alter table %s drop primary key",
+      "viewAdd": "CREATE VIEW [name]\nas\n  select * from WB_USER",
+      "spAdd": "CREATE PROCEDURE [name](\nin inParam varchar(10), /*输入参数*/\nout outParam varchar(10) /*输出参数*/\n)\nbegin\n  select * from WB_USER where 1=0;\n\nend",
+      "fnAdd": "CREATE FUNCTION [name]\n(param1 varchar(10), param2 varchar(10))\nreturns varchar(20)\nbegin\n  declare var1 varchar(20);\n  set var1=concat(param1, param2);\n  return var1;\nend",
+      "trAdd": "CREATE TRIGGER [name]\nafter insert on tableName for each row\nbegin\n\nend"
+    }
+  },
+  "Oracle": {
+    "prefix": "select USERNAME from DBA_USERS order by USERNAME",
+    "table": "select TABLE_NAME,COMMENTS from all_tab_comments where lower(owner)=lower('{#prefix#}') and TABLE_TYPE='TABLE' order by TABLE_NAME",
+    "tableEdit": "select dbms_metadata.get_ddl('TABLE','{#table#}','{#prefix#}') as \"SCRIPT\" from dual",
+    "field": "select COLUMN_NAME,COMMENTS from all_col_comments where lower(OWNER)=lower('{#prefix#}') and lower(TABLE_NAME)=lower('{#table#}')",
+    "fieldHint": "select COLUMN_NAME,COMMENTS from all_col_comments where lower(OWNER)=lower('{#prefix#}') and lower(TABLE_NAME)=lower('{#table#}')",
+    "view": "select TABLE_NAME,COMMENTS from all_tab_comments where lower(owner)=lower('{#prefix#}') and TABLE_TYPE='VIEW' order by TABLE_NAME",
+    "viewEdit": "select dbms_metadata.get_ddl('VIEW','{#view#}','{#prefix#}') as \"SCRIPT\" from dual",
+    "sp": "select OBJECT_NAME from ALL_OBJECTS where owner='{#prefix#}' and OBJECT_TYPE='PROCEDURE' order by OBJECT_NAME",
+    "spEdit": "select dbms_metadata.get_ddl('PROCEDURE','{#sp#}','{#prefix#}') as \"SCRIPT\" from dual",
+    "fn": "select OBJECT_NAME from ALL_OBJECTS where owner='{#prefix#}' and OBJECT_TYPE='FUNCTION' order by OBJECT_NAME",
+    "fnEdit": "select dbms_metadata.get_ddl('FUNCTION','{#fn#}','{#prefix#}') as \"SCRIPT\" from dual",
+    "tr": "select OBJECT_NAME from ALL_OBJECTS where owner='{#prefix#}' and OBJECT_TYPE='TRIGGER' order by OBJECT_NAME",
+    "trEdit": "select dbms_metadata.get_ddl('TRIGGER','{#tr#}','{#prefix#}') as \"SCRIPT\" from dual",
+    "idx": "select a.INDEX_NAME,case when B.CONSTRAINT_TYPE='P' then 'key_icon' when a.UNIQUENESS='UNIQUE' then 'star_icon' else 'sort_by_name_icon' end as \"iconCls\", 'true' as \"leaf\" from ALL_INDEXES a left join ALL_CONSTRAINTS b on a.OWNER=b.OWNER and a.TABLE_NAME=b.TABLE_NAME and a.INDEX_NAME=b.INDEX_NAME where a.OWNER='{#prefix#}' and a.TABLE_NAME='{#table#}'",
+    "idxEdit": "select '{#fullTableName#}' as \"tableName\",'!createIndexScript' as \"SCRIPT\",'\"'||COLUMN_NAME||'\"' as \"FIELD_NAME\",INDEX_NAME from all_ind_columns where TABLE_OWNER='{#prefix#}' and TABLE_NAME='{#table#}' and INDEX_NAME='{#idx#}' order by COLUMN_POSITION",
+    "tag": {
+      "db": "oracle",
+      "prefix": "select user from dual",
+      "types": ["VARCHAR2()", "NVARCHAR2()", "NUMERIC()", "TIMESTAMP", "CLOB", "NCLOB", "BLOB"],
+      "fieldsMap": {
+        "1": "char(%s)",
+        "-15": "nchar(%s)",
+        "12": "varchar2(%s)",
+        "-9": "nvarchar2(%s)",
+        "4": "int",
+        "5": "smallint",
+        "-5": "bigint",
+        "6": "float",
+        "8": "double",
+        "3": "decimal(%s,%s)",
+        "2": "numeric(%s,%s)",
+        "91": "date",
+        "92": "time",
+        "93": "timestamp",
+        "16": "boolean",
+        "-7": "bit",
+        "-1": "clob",
+        "-16": "nclob",
+        "2005": "clob",
+        "2011": "nclob",
+        "2004": "blob",
+        "-2": "blob",
+        "-3": "blob",
+        "-4": "blob"
+      },
+      "dropPk": "alter table %s drop constraint %s",
+      "viewAdd": "CREATE VIEW [name]\nas\n  select * from WB_USER",
+      "spAdd": "CREATE PROCEDURE [name](\n  inParam in varchar2, --输入参数\n  outParam out varchar2 --输出参数\n)\nas\nbegin\n  outParam := 'val';\nend;",
+      "fnAdd": "CREATE FUNCTION [name]\n(param1 varchar2, param2 varchar2)\nreturn varchar2\nas\n  var1 varchar2(20);\nbegin\n  var1:=concat(param1, param2);\n  return var1;\nend;",
+      "trAdd": "CREATE TRIGGER [name]\nbefore insert or update or delete on tableName\nbegin\n  if 1=0 then\n    raise_application_error(-20001, 'message');\n  end if;\nend;"
+    }
+  }
+}

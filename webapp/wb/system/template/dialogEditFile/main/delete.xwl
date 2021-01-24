@@ -1,0 +1,1 @@
+{"hidden":false,"children":[{"configs":{"itemId":"module","serverScript":"//根据前台传递的destroy参数删除表中的指定记录\napp.update({\n  tableName: '{#tableName#}'\n});"},"expanded":true,"children":[],"type":"module"}],"roles":{},"title":"删除","iconCls":"","inframe":false,"pageLink":""}

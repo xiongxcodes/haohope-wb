@@ -1,0 +1,808 @@
+{"sys": {
+  "controls": {
+    "limitRecords": [
+      1000,
+      "查询时默认最多允许单次输出到客户端的记录数。",
+      {"type": "int"}
+    ],
+    "limitExportRecords": [
+      10000,
+      "导出时默认最多允许单次输出到客户端的记录数。",
+      {"type": "int"}
+    ]
+  },
+  "log": [
+    true,
+    "是否记录系统日志信息。",
+    {"type": "bool"}
+  ],
+  "homeMobile": [
+    "thome",
+    "移动设备主页登录后转到的地址。",
+    {"type": "string"}
+  ],
+  "session": {
+    "ajaxTimeout": [
+      0,
+      "客户端ajax操作超时时长，单位为毫秒。0表示使用默认值（30秒），-1表示不超时。",
+      {"type": "int"}
+    ],
+    "maskTimeout": [
+      2000,
+      "超过多长时间操作未返回显示mask和信息，单位为毫秒，0表示始终显示mask。",
+      {"type": "int"}
+    ],
+    "verifyImage": {
+      "fontName": [
+        "Tahoma",
+        "验证码使用的字体。",
+        {"type": "string"}
+      ],
+      "fontStyle": [
+        "bold",
+        "验证码字体样式。",
+        {
+          "list": [
+            "plain",
+            "bold",
+            "italic"
+          ],
+          "type": "enum"
+        }
+      ],
+      "enabled": [
+        true,
+        "是否启用登录时验证码验证功能。",
+        {"type": "bool"}
+      ]
+    },
+    "recordSession": [
+      true,
+      "是否记录Session对象。",
+      {"type": "bool"}
+    ],
+    "submitTimeout": [
+      8000,
+      "使用WebUtil.submit方法默认的超时时长，单位为毫秒。0表示不超时。",
+      {"type": "int"}
+    ],
+    "uniqueLogin": [
+      false,
+      "每个用户帐户是否只允许维持单个会话。",
+      {"type": "bool"}
+    ],
+    "sessionTimeout": [
+      -3,
+      "服务器端会话超时时长，单位为秒。-3表示使用服务器默认值，-2表示最大整数值。",
+      {"type": "int"}
+    ],
+    "autoLogout": [
+      false,
+      "当关闭home主页时是否自动注销当前会话。",
+      {"type": "bool"}
+    ],
+    "sessionVars": [
+      "theme,touchTheme,editTheme",
+      "以逗号分隔的存储到session属性值名称列表，这些属性值来源于value表。",
+      {"type": "string"}
+    ]
+  },
+  "locale": {
+    "urlEncoding": [
+      "",
+      "应用服务器对URL使用的编码，可能值为iso-8859-1或utf-8。",
+      {"type": "string"}
+    ],
+    "charset": [
+      "",
+      "应用之外默认使用的编码，为空表示基于操作系统。",
+      {"type": "string"}
+    ],
+    "defaultLanguage": [
+      "en",
+      "如果找不到指定的语言定义，使用的默认语言。",
+      {
+        "list": [
+          "af",
+          "bg",
+          "ca",
+          "cs",
+          "da",
+          "de",
+          "el",
+          "en",
+          "en_AU",
+          "en_GB",
+          "es",
+          "et",
+          "fa",
+          "fi",
+          "fr",
+          "fr_CA",
+          "he",
+          "hr",
+          "hu",
+          "id",
+          "it",
+          "ja",
+          "ko",
+          "lt",
+          "lv",
+          "mk",
+          "nl",
+          "no",
+          "no_NN",
+          "pl",
+          "pt",
+          "pt_BR",
+          "pt_PT",
+          "ro",
+          "ru",
+          "sk",
+          "sl",
+          "sr",
+          "sr_RS",
+          "sv",
+          "th",
+          "tr",
+          "uk",
+          "vi",
+          "zh",
+          "zh_TW"
+        ],
+        "type": "enum"
+      }
+    ],
+    "useLocalTime": [
+      false,
+      "是否根据时差，把服务器端时间转换成客户端时间。",
+      {"type": "bool"}
+    ],
+    "language": [
+      "auto",
+      "系统使用的语言。",
+      {
+        "list": [
+          "auto",
+          "af",
+          "bg",
+          "ca",
+          "cs",
+          "da",
+          "de",
+          "el",
+          "en",
+          "en_AU",
+          "en_GB",
+          "es",
+          "et",
+          "fa",
+          "fi",
+          "fr",
+          "fr_CA",
+          "he",
+          "hr",
+          "hu",
+          "id",
+          "it",
+          "ja",
+          "ko",
+          "lt",
+          "lv",
+          "mk",
+          "nl",
+          "no",
+          "no_NN",
+          "pl",
+          "pt",
+          "pt_BR",
+          "pt_PT",
+          "ro",
+          "ru",
+          "sk",
+          "sl",
+          "sr",
+          "sr_RS",
+          "sv",
+          "th",
+          "tr",
+          "uk",
+          "vi",
+          "zh",
+          "zh_TW"
+        ],
+        "type": "enum"
+      }
+    ],
+    "lineSeparator": [
+      "\\r\\n",
+      "输出至用户文件时使用的换行符号。",
+      {
+        "list": [
+          "\\r\\n",
+          "\\n",
+          "\\r"
+        ],
+        "type": "enum"
+      }
+    ],
+    "filenameCharset": [
+      "",
+      "文件名称使用的编码，为空表示基于操作系统。",
+      {"type": "string"}
+    ],
+    "mailCharset": [
+      "",
+      "邮件二进制数据源使用的编码，为空表示基于操作系统。",
+      {"type": "string"}
+    ]
+  },
+  "printError": [
+    true,
+    "是否在服务器端打印异常信息。",
+    {"type": "bool"}
+  ],
+  "serverId": [
+    "00",
+    "集群环境下任意两位字符的服务器编号。",
+    {"type": "string"}
+  ],
+  "network": {"showSocketError": [
+    false,
+    "是否显示WebSocket的Error事件中的错误信息。",
+    {"type": "bool"}
+  ]},
+  "file": {"resourceFiles": [
+    "flw,rpt,qry,frm",
+    "以逗号分隔的资源文件扩展名列表。",
+    {"type": "string"}
+  ]},
+  "optimize": [
+    false,
+    "是否最优化系统配置。最优化将关闭调试模式，禁止检查文件更新和禁止消息显示等功能。",
+    {"type": "bool"}
+  ],
+  "serverConsolePrint": [
+    true,
+    "是否在服务器控制台中打印信息。",
+    {"type": "bool"}
+  ],
+  "portal": [
+    "index",
+    "应用首页URL捷径地址。该变量生效需重启应用服务器。",
+    {"type": "string"}
+  ],
+  "app": {
+    "versionType": [
+      "s",
+      "发布的版本类型。",
+      {"type": "string"}
+    ],
+    "date": [
+      "2019-11-13",
+      "版本发布日期。",
+      {"type": "string"}
+    ],
+    "copyright": [
+      "&copy; <a href=\"http://www.geejing.com\" target=\"_blank\">geejing.com<\/a>, all rights reserved.",
+      "版权声明信息。",
+      {"type": "string"}
+    ],
+    "jsLinks": [
+      "",
+      "前端加载的js链接列表，多个链接以分号分隔。",
+      {"type": "string"}
+    ],
+    "serialNumber": [
+      "",
+      "WebBuilder 产品的唯一注册序列号。",
+      {"type": "string"}
+    ],
+    "touchTheme": [
+      "classic",
+      "移动应用默认采用的界面方案。",
+      {
+        "list": [
+          "classic",
+          "apple",
+          "bb10",
+          "cupertino",
+          "mountainview",
+          "tizen",
+          "wp"
+        ],
+        "type": "enum"
+      }
+    ],
+    "versionTitle": [
+      "企业版(简化版)",
+      "应用版本标题。",
+      {"type": "string"}
+    ],
+    "licensee": [
+      "",
+      "持有合法授权许可的被授权人名称。",
+      {"type": "string"}
+    ],
+    "homeConsolePrint": [
+      true,
+      "是否在主页所在的浏览器控制台中打印信息。",
+      {"type": "bool"}
+    ],
+    "cssLinks": [
+      "",
+      "前端加载的css链接列表，多个链接以分号分隔。",
+      {"type": "string"}
+    ],
+    "title": [
+      "WebBuilder 8",
+      "应用标题。",
+      {"type": "string"}
+    ],
+    "version": [
+      "8.7.1",
+      "应用版本号。",
+      {"type": "string"}
+    ],
+    "homeShowApp": [
+      false,
+      "在主页home模块列表中是否显示移动App。",
+      {"type": "bool"}
+    ],
+    "theme": [
+      "modern",
+      "常规应用默认采用的界面方案。",
+      {
+        "list": [
+          "classic",
+          "gray",
+          "neptune",
+          "modern"
+        ],
+        "type": "enum"
+      }
+    ],
+    "portletHeader": [
+      true,
+      "是否显示Portlet的header。",
+      {"type": "bool"}
+    ],
+    "account": {
+      "allowRegister": [
+        false,
+        "是否允许用户通过注册的方式添加一个新的用户帐户。",
+        {"type": "bool"}
+      ],
+      "registerUserRole": [
+        "demo",
+        "通过注册方式添加的用户默认具有的角色id。",
+        {"type": "string"}
+      ]
+    }
+  },
+  "cache": {
+    "gzipMinSize": [
+      6144,
+      "超过该字节大小的文件以GZip格式进行缓存。",
+      {"type": "int"}
+    ],
+    "maxAge": [
+      -1,
+      "浏览器缓存资源文件时长，-1默认策略，0不缓存，值大于0缓存以秒为单位的时长。",
+      {"type": "int"}
+    ],
+    "checkModified": [
+      true,
+      "客户端获取文件时是否检查缓存的文件是否更新。",
+      {"type": "bool"}
+    ],
+    "enabled": [
+      true,
+      "是否启用服务器端文件缓存机制。",
+      {"type": "bool"}
+    ]
+  },
+  "debug": [
+    true,
+    "是否是调试模式。",
+    {"type": "bool"}
+  ],
+  "ide": {
+    "sysFolderBase": [
+      "root",
+      "文件列表系统目录的根目录。",
+      {
+        "list": [
+          "root",
+          "server",
+          "app"
+        ],
+        "type": "enum"
+      }
+    ],
+    "consolePrint": [
+      true,
+      "是否在IDE所在的浏览器控制台中打印信息。",
+      {"type": "bool"}
+    ],
+    "searchIgnoreRelease": [
+      true,
+      "搜索文件时是否忽略自动生成的发布版本文件。",
+      {"type": "bool"}
+    ],
+    "syncPath": [
+      "",
+      "对文件的所有操作自动同步到该目录。",
+      {"type": "string"}
+    ],
+    "fileTitle": [
+      true,
+      "在文件列表树中是否显示文件的标题。",
+      {"type": "bool"}
+    ],
+    "releasePath": [
+      "",
+      "生成软件包时的发布目录。",
+      {"type": "string"}
+    ],
+    "editTheme": [
+      "default",
+      "默认采用的脚本编辑器方案。",
+      {
+        "list": [
+          "default",
+          "night",
+          "blackboard",
+          "eclipse",
+          "mbo",
+          "rubyblue"
+        ],
+        "type": "enum"
+      }
+    ],
+    "sourcePath": [
+      "",
+      "源代码根目录。",
+      {"type": "string"}
+    ]
+  },
+  "home": [
+    "home",
+    "主页登录后转到的地址。",
+    {"type": "string"}
+  ],
+  "sendStreamGzip": [
+    false,
+    "发送流数据时是否使用GZip压缩。",
+    {"type": "bool"}
+  ],
+  "task": {
+    "waitFireDelay": [
+      100,
+      "获取任务运行时间时等待的时间，单位为毫秒。",
+      {"type": "int"}
+    ],
+    "log": [
+      true,
+      "是否记录任务的开始时间、结束时间和异常信息日志。",
+      {"type": "bool"}
+    ],
+    "stopDelay": [
+      1000,
+      "计划任务终止时等待结束的时间，单位为毫秒。",
+      {"type": "int"}
+    ],
+    "threadCount": [
+      10,
+      "执行计划任务的线程数。",
+      {"type": "int"}
+    ],
+    "enabled": [
+      true,
+      "是否允许系统在启动的时候自动启动计划任务。",
+      {"type": "bool"}
+    ]
+  },
+  "sendGzipMinSize": [
+    10240,
+    "发送非流数据时使用GZip压缩的最小字节数，-1表示始终不压缩。",
+    {"type": "int"}
+  ],
+  "service": {
+    "preview": {
+      "textFontSize": [
+        "12px",
+        "正文字体大小。",
+        {"type": "string"}
+      ],
+      "headerFontWeight": [
+        "400",
+        "列标题字体粗细程度。",
+        {"type": "string"}
+      ],
+      "titleLineHeight": [
+        "1.6",
+        "标题行高。",
+        {"type": "string"}
+      ],
+      "textLineHeight": [
+        "1.6",
+        "正文行高。",
+        {"type": "string"}
+      ],
+      "titleFontSize": [
+        "16px",
+        "标题字体大小。",
+        {"type": "string"}
+      ],
+      "titleFontWeight": [
+        "bold",
+        "标题字体粗细程度。",
+        {"type": "string"}
+      ],
+      "headerBackColor": [
+        "",
+        "列标题背景色。",
+        {"type": "string"}
+      ],
+      "textFont": [
+        "",
+        "正文字体，如果为空使用默认字体。",
+        {"type": "string"}
+      ],
+      "titleFont": [
+        "",
+        "标题字体，如果为空使用默认字体。",
+        {"type": "string"}
+      ]
+    },
+    "excel": {
+      "border": [
+        true,
+        "是否显示单元格边框线条。",
+        {"type": "bool"}
+      ],
+      "xlsx": [
+        true,
+        "Excel默认使用的格式，true使用xlsx，false使用xls。",
+        {"type": "bool"}
+      ],
+      "maxTableRows": [
+        100000,
+        "使用Excel生成的表格允许的最大行数，超过该数值将抛出异常。",
+        {"type": "int"}
+      ],
+      "freezePane": [
+        true,
+        "是否创建可分割的冻结面板。",
+        {"type": "bool"}
+      ],
+      "flexColumnMaxWidth": [
+        200,
+        "flex列最大宽度。",
+        {"type": "int"}
+      ],
+      "header": {
+        "fontName": [
+          "",
+          "字体名称，如果为空使用默认字体。",
+          {"type": "string"}
+        ],
+        "backColor": [
+          "浅黄",
+          "列标题背景色。",
+          {
+            "list": [
+              "默认",
+              "金色",
+              "灰色",
+              "浅黄"
+            ],
+            "type": "enum"
+          }
+        ],
+        "fontHeight": [
+          200,
+          "字体高度。",
+          {"type": "int"}
+        ],
+        "wrapText": [
+          false,
+          "如果标题内容超过单元格长度，是否自动换行。",
+          {"type": "bool"}
+        ],
+        "fontWeight": [
+          400,
+          "字体粗细程度。",
+          {"type": "int"}
+        ],
+        "rowHeight": [
+          1.6,
+          "标题行高度，如果值小于10表示为字体高度的倍数。",
+          {"type": "double"}
+        ]
+      },
+      "maxTableColumns": [
+        10000,
+        "使用Excel生成的表格允许的最大列数，超过该数值将抛出异常。",
+        {"type": "int"}
+      ],
+      "text": {
+        "fontName": [
+          "",
+          "字体名称，如果为空使用默认字体。",
+          {"type": "string"}
+        ],
+        "fontHeight": [
+          200,
+          "字体高度。",
+          {"type": "int"}
+        ],
+        "fontWeight": [
+          400,
+          "字体粗细程度。",
+          {"type": "int"}
+        ],
+        "rowHeight": [
+          1.6,
+          "标题行高度，如果值小于10表示为字体高度的倍数。",
+          {"type": "double"}
+        ]
+      },
+      "title": {
+        "fontName": [
+          "",
+          "字体名称，如果为空使用默认字体。",
+          {"type": "string"}
+        ],
+        "fontHeight": [
+          240,
+          "字体高度。",
+          {"type": "int"}
+        ],
+        "align": [
+          "居中",
+          "标题对齐方式。",
+          {
+            "list": [
+              "居中",
+              "左",
+              "右",
+              "居中选择",
+              "填充",
+              "常规",
+              "两端对齐"
+            ],
+            "type": "enum"
+          }
+        ],
+        "wrapText": [
+          true,
+          "如果标题内容超过单元格长度，是否自动换行。",
+          {"type": "bool"}
+        ],
+        "fontWeight": [
+          700,
+          "字体粗细程度。",
+          {"type": "int"}
+        ],
+        "rowHeight": [
+          2,
+          "标题行高度，如果值小于10表示为字体高度的倍数。",
+          {"type": "double"}
+        ]
+      },
+      "boolText": [
+        "",
+        "如果值为布尔值，指定true和false显示的文本。语法为\u201ctrueText,falseText\u201d。",
+        {"type": "string"}
+      ]
+    },
+    "upload": {
+      "totalMaxSize": [
+        1048576,
+        "整个表单合计上传允许的最大KB字节数，-1表示无限制。",
+        {"type": "int"}
+      ],
+      "maxSize": [
+        -1,
+        "单个文件上传允许的最大KB字节数，-1表示无限制。",
+        {"type": "int"}
+      ],
+      "bufferSize": [
+        51200,
+        "文件上传时小于该字节将使用内存缓存否则使用文件缓存。",
+        {"type": "int"}
+      ]
+    },
+    "allowInstall": [
+      false,
+      "是否允许使用安装向导。",
+      {"type": "bool"}
+    ]
+  },
+  "useServletPath": [
+    true,
+    "指定是否使用ServetPath获取url路径。",
+    {"type": "bool"}
+  ],
+  "jndi": {"default": [
+    "java:comp/env/default",
+    "默认使用的数据库连接JNDI",
+    {"type": "string"}
+  ]},
+  "db": {
+    "fetchSize": [
+      -1,
+      "单次从数据库提取的建议性记录数，-1表示数据库默认值。",
+      {"type": "int"}
+    ],
+    "tableSchemPrefix": [
+      false,
+      "在表名列表中是否显示表名前的方案名前缀。",
+      {"type": "bool"}
+    ],
+    "whereUseFloat": [
+      false,
+      "在SQL where部分表达式中是否允许使用浮点数类型的字段。",
+      {"type": "bool"}
+    ],
+    "useDouble": [
+      true,
+      "对于浮点值类型的字段设置变量参数值时是否强制使用double类型。",
+      {"type": "bool"}
+    ],
+    "batchUpdate": [
+      false,
+      "是否允许数据库使用批处理功能。",
+      {"type": "bool"}
+    ],
+    "whereUseDate": [
+      false,
+      "在SQL where部分表达式中是否允许使用日期和时间类型的字段。",
+      {"type": "bool"}
+    ],
+    "emptyString": [
+      "__@",
+      "把该字符串映射为空字符串。",
+      {"type": "string"}
+    ],
+    "forceUpperCase": [
+      false,
+      "是否强制把字段名称转换为大写。",
+      {"type": "bool"}
+    ],
+    "stringAsText": [
+      1000,
+      "当字符串类型字段长度大于该值时作为文本字段类型处理。",
+      {"type": "int"}
+    ],
+    "defaultType": [
+      "",
+      "默认数据库类型，可用于SqlSwitcher控件的切换。",
+      {
+        "list": [
+          "db2",
+          "derby",
+          "firebird",
+          "h2",
+          "hsqldb",
+          "informix",
+          "mysql",
+          "oracle",
+          "pointbase",
+          "postgresql",
+          "sqlserver",
+          "sybase",
+          "teradata"
+        ],
+        "type": "enum"
+      }
+    ],
+    "checkFieldReadOnly": [
+      true,
+      "是否检查数据库表中的字段只读属性。",
+      {"type": "bool"}
+    ]
+  }
+}}

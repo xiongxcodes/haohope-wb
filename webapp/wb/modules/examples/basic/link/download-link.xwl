@@ -1,0 +1,1 @@
+{"hidden":false,"children":[{"configs":{"itemId":"module","description":"请查看模块属性的链接配置项"},"expanded":false,"children":[],"type":"module"}],"roles":{},"title":"下载文件链接","iconCls":"","inframe":false,"pageLink":"{download: true, url:'download', params: {files: ['wb/images/site/wb.gif'], zip: true, downloadName: 'wb图片.zip'}}"}

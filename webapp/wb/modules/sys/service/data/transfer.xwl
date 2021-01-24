@@ -1,0 +1,1 @@
+{"hidden":true,"children":[{"configs":{"itemId":"module","description":"把数据的输出进行转移，重定向到指定格式的输出\n该模块本身不需要任何仅限，重定向输出所需的权限依赖于需要重定向输出的模块","serverMethod":"com.wb.interact.FilePush.transfer","loginRequired":"false"},"expanded":false,"children":[],"type":"module"}],"roles":{"default":1,"demo":1},"title":"数据转移","iconCls":"","inframe":false,"pageLink":""}

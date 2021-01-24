@@ -5,7 +5,7 @@ import java.io.File;
 import org.apache.catalina.Context;
 import org.apache.catalina.startup.Tomcat;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnWebApplication;
-import org.springframework.boot.autoconfigure.jdbc.DataSourceProperties;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory;
 import org.springframework.boot.web.embedded.tomcat.TomcatWebServer;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
@@ -13,15 +13,17 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Primary;
 import org.springframework.web.socket.server.standard.ServerEndpointExporter;
 
+import com.github.xiongxcodes.wb.configuration.properties.WbStatProperties;
 import com.wb.common.Base;
 import com.wb.common.WebSocket;
 import com.wb.util.DbUtil;
 
+@EnableConfigurationProperties({WbStatProperties.class})
 @ConditionalOnWebApplication
 public class WbCoreConfiguration {
     @Bean
     @Primary
-    public TomcatServletWebServerFactory tomcatServletWebServerFactory(DataSourceProperties dataSourceProperties) {
+    public TomcatServletWebServerFactory tomcatServletWebServerFactory(WbStatProperties wbStatProperties) {
         TomcatServletWebServerFactory tomcat = new TomcatServletWebServerFactory() {
             @Override
             protected TomcatWebServer getTomcatWebServer(Tomcat tomcat) {
@@ -32,8 +34,7 @@ public class WbCoreConfiguration {
             @Override
             protected void postProcessContext(Context context) {
                 try {
-                    File file =
-                        new File("D:\\Work\\Eclipse\\Workspaces\\hhwb-parent\\hhwb-core\\src\\main\\resources\\webapp");// org.springframework.util.ResourceUtils.getFile("classpath:webapp");
+                    File file = new File(wbStatProperties.getWebpath());// org.springframework.util.ResourceUtils.getFile("classpath:webapp");
                     context.setDocBase(file.getAbsolutePath());
                 } catch (Exception e) {
                     e.printStackTrace();

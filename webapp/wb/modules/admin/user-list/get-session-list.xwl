@@ -1,0 +1,1 @@
+{"hidden":true,"children":[{"configs":{"itemId":"module","serverMethod":"com.wb.common.UserList.getSessionList"},"expanded":false,"children":[],"type":"module"}],"roles":{},"title":"获取会话列表","iconCls":"","inframe":false,"pageLink":""}

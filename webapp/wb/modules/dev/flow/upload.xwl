@@ -1,0 +1,1 @@
+{"hidden":true,"children":[{"configs":{"itemId":"module","serverScript":"app.allowBasePath = com.wb.interact.ResourceManager.basePath;\napp.execute('upload');"},"expanded":false,"children":[],"type":"module"}],"roles":{},"title":"上传文件","iconCls":"","inframe":false,"pageLink":""}

@@ -1,0 +1,6 @@
+{"ROLE_ID":"admin","ROLE_NAME":"管理员","REMARK":"拥有对系统进行完全访问的所有权限。","STATUS":1}
+{"ROLE_ID":"basic","ROLE_NAME":"基本","REMARK":"只具有最基本功能的角色。","STATUS":1}
+{"ROLE_ID":"default","ROLE_NAME":"默认","REMARK":"每个用户都具有的角色。","STATUS":1}
+{"ROLE_ID":"demo","ROLE_NAME":"演示","REMARK":"只具有查看功能，不能对数据进行修改。","STATUS":1}
+{"ROLE_ID":"developer","ROLE_NAME":"开发人员","REMARK":"具有开发相关模块的使用权限。","STATUS":1}
+{"ROLE_ID":"manager","ROLE_NAME":"负责人","REMARK":"用户所在部门的负责人。","STATUS":1}

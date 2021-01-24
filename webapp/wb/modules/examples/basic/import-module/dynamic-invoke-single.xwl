@@ -1,0 +1,1 @@
+{"hidden":false,"children":[{"configs":{"itemId":"module"},"expanded":true,"children":[{"configs":{"layout":"absolute","itemId":"window1","dialog":"true","width":"392","title":"该窗口关闭时隐藏","height":"240"},"expanded":false,"children":[],"type":"window"}],"type":"module"}],"roles":{},"title":"动态调用的单例模块","iconCls":"","inframe":false,"pageLink":""}

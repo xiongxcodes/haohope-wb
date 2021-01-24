@@ -1,0 +1,1 @@
+{"hidden":true,"children":[{"configs":{"serverScript":"Var.set('sys.task.enabled', true);\ncom.wb.tool.TaskManager.start();","itemId":"module"},"expanded":false,"children":[],"type":"module"}],"roles":{},"title":"启动引擎","iconCls":"","inframe":false,"pageLink":""}

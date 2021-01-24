@@ -1,0 +1,1 @@
+{"hidden":false,"children":[{"configs":{"itemId":"module"},"expanded":true,"children":[{"configs":{"itemId":"dataprovider1","dictTableNames":"wb_misc","sql":"select * from WB_MISC"},"expanded":false,"children":[],"type":"dataprovider"}],"type":"module"}],"roles":{},"title":"查询","iconCls":"","inframe":false,"pageLink":""}

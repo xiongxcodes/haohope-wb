@@ -1,0 +1,1 @@
+{"hidden":false,"children":[{"configs":{"itemId":"module"},"expanded":true,"children":[{"configs":{"itemId":"query1","sql":"update WB_IM set NOT_READ=0 where FROM_USER={?FROM_USER?} and TO_USER={?sys.user?} and NOT_READ=1"},"expanded":false,"children":[],"type":"query"}],"type":"module"}],"roles":{},"title":"设置已读","iconCls":"","inframe":false,"pageLink":""}

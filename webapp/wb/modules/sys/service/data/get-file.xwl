@@ -1,0 +1,1 @@
+{"hidden":true,"children":[{"configs":{"itemId":"module","serverMethod":"com.wb.interact.FilePush.getFile","loginRequired":"false"},"expanded":false,"children":[],"type":"module"}],"roles":{"default":1,"demo":1},"title":"生成前端推送文件","iconCls":"","inframe":false,"pageLink":""}

@@ -1,0 +1,1 @@
+{"hidden":true,"children":[{"configs":{"itemId":"module","serverScript":"var name = app.get('name'),\n  value = app.get('value');\nif (value)\n  Resource.set(request, name, value);\nelse\n  Resource.remove(request, name);"},"expanded":false,"children":[],"type":"module"}],"roles":{},"title":"写当前用户的资源","iconCls":"","inframe":false,"pageLink":""}
